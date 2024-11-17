@@ -117,7 +117,7 @@ export const navItems: INavData[] = [
       {
         name: 'Microsoft Azure',
         url: '/base/bulut-sistemleri/azure',
-        iconComponent: { name: 'cil-folder' },
+        iconComponent: AzureIconComponent,
         children: [
           {
             name: 'Envanter',
