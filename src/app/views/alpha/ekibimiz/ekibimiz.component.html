@@ -1,0 +1,56 @@
+<div class="ekibimiz-container">
+  <h1>Ekibimiz</h1>
+  <p>Ekibimizde yer alan üyeler:</p>
+  <ul>
+    <li *ngFor="let member of teamMembers">
+      <img [src]="member.avatar" alt="{{ member.name }}" class="avatar">
+      <div class="member-info">
+        <h2>{{ member.name }}</h2>
+        <p>{{ member.role }}</p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<style>
+.ekibimiz-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #666;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    li {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      color: #555;
+      display: flex;
+      align-items: center;
+      &:before {
+        content: '•';
+        color: #007bff;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+    }
+  }
+}
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+</style>

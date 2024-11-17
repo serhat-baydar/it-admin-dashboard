@@ -1,3 +1,6 @@
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
 <!--<c-header class="mb-4 d-print-none" position="sticky">-->
 <ng-container>
   <c-container [fluid]="true" class="border-bottom px-4">
@@ -11,44 +14,18 @@
     >
       <svg cIcon name="cilMenu" size="lg"></svg>
     </button>
-    <c-header-nav class="d-none d-md-flex">
-      <c-nav-item>
-        <a cNavLink routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-      </c-nav-item>
-      <c-nav-item>
-        <a cNavLink routerLink="/users" routerLinkActive="active">Users</a>
-      </c-nav-item>
-      <c-nav-item>
-        <a cNavLink routerLink="/settings" routerLinkActive="active">Settings</a>
-      </c-nav-item>
-    </c-header-nav>
-
-    <c-header-nav class="d-none d-md-flex ms-auto ">
-      <a cNavLink>
-        <svg cIcon class="my-1" name="cilBell" size="lg"></svg>
-      </a>
-      <a cNavLink>
-        <svg cIcon class="my-1" name="cilList" size="lg"></svg>
-      </a>
-      <a cNavLink>
-        <svg cIcon class="my-1" name="cilEnvelopeOpen" size="lg"></svg>
-      </a>
-    </c-header-nav>
-
-    <c-header-nav class="ms-auto ms-md-0">
-      <div class="nav-item py-1">
-        <div class="vr h-100 mx-2 text-body text-opacity-75"></div>
-      </div>
+    <div class="marquee-container">
+      <span class="ms-3 my-auto marquee-text custom-font">We Shed Light on the Future!</span>
+    </div>
+    <c-header-nav class="d-none d-md-flex ms-auto"> <!-- Added ms-auto class here -->
       <ng-container *ngTemplateOutlet="themeDropdown" />
       <div class="nav-item py-1">
         <div class="vr h-100 mx-2 text-body text-opacity-75"></div>
       </div>
     </c-header-nav>
-
     <c-header-nav class="mx-0">
       <ng-container *ngTemplateOutlet="userDropdown" />
     </c-header-nav>
-
   </c-container>
   <c-container [fluid]="true" class="px-4">
     <c-breadcrumb-router />
@@ -62,7 +39,7 @@
       <c-avatar
         shape="rounded-1"
         [size]="'md'"
-        src="./assets/images/avatars/8.jpg"
+        src="./assets/images/avatars/foto1.jpg"
         status="success"
         textColor="primary"
         alt="User avatar"
@@ -179,3 +156,41 @@
     </div>
   </c-dropdown>
 </ng-template>
+
+<style>
+  .marquee-container {
+    width: 300px; /* Adjust the width as needed */
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .marquee-text {
+    font-family: 'Arial', sans-serif; /* Change the font family here */
+    font-size: 16px; /* Change the font size here */
+    display: inline-block;
+    white-space: nowrap;
+    box-sizing: border-box;
+    animation: marquee 10s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .custom-font {
+    font-family: 'Dancing Script', cursive; /* Change the font family to Dancing Script */
+    font-size: 24px; /* Change the font size here */
+    font-weight: bold; /* Change the font weight here */
+    color: #eca115; /* Change the font color here */
+  }
+
+  .ms-auto {
+    margin-left: auto;
+  }
+</style>

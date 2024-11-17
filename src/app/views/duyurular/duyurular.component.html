@@ -1,0 +1,9 @@
+<div class="duyurular-container">
+  <h1>Duyurular</h1>
+  <ul>
+    <li *ngFor="let duyuru of duyurular">
+      <a [routerLink]="['/duyurular/detay', duyuru.id]">{{ duyuru.baslik }}</a>
+    </li>
+  </ul>
+</div>
+
