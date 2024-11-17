@@ -18,6 +18,7 @@ import {
 import { DefaultFooterComponent, DefaultHeaderComponent } from './';
 import { navItems } from './_nav';
 
+
 function isOverflown(element: HTMLElement) {
   return (
     element.scrollHeight > element.clientHeight ||
@@ -45,7 +46,8 @@ function isOverflown(element: HTMLElement) {
     ShadowOnScrollDirective,
     ContainerComponent,
     RouterOutlet,
-    DefaultFooterComponent
+    DefaultFooterComponent,
+ 
   ]
 })
 export class DefaultLayoutComponent {

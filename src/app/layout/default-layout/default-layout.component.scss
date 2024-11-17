@@ -6,6 +6,15 @@
     --scrollbar-thumb-hover-color: var(--cui-gray-400, #999);
     --scrollbar-hover-size: calc(var(--scrollbar-size) * 1.5);
   }
+
+  .sidebar-brand-text {
+    margin-left: 10px;
+    font-size: 1.25rem;
+    color: rgb(255, 153, 0);
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 64px; /* Adjust this value to center vertically */
+  }
 }
 
 // ng-scrollbar css variables

@@ -1,4 +1,5 @@
 import { INavData as CoreUINavData } from '@coreui/angular';
+import { AzureIconComponent } from 'src/app/components/azure-icon/azure-icon.component';
 
 export interface INavData extends CoreUINavData {
   customIcon?: string;
@@ -7,7 +8,7 @@ export interface INavData extends CoreUINavData {
 export const navItems: INavData[] = [
   {
     title: true,
-    name: 'Migros Platform ve Bulut Yönetim Sistemi'
+    name: ' Platform ve Bulut Yönetim Sistemi'
   },
   {
     name: 'Alpha Teams',

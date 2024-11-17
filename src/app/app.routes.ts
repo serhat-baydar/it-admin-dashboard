@@ -19,8 +19,8 @@ export const routes: Routes = [
         loadChildren: () => import('./views/dashboard/routes').then((m) => m.routes)
       },
       {
-        path: 'theme',
-        loadChildren: () => import('./views/theme/routes').then((m) => m.routes)
+        path: 'alpha',
+        loadChildren: () => import('./views/alpha/routes').then((m) => m.routes)
       },
       {
         path: 'base',
@@ -51,8 +51,8 @@ export const routes: Routes = [
         loadChildren: () => import('./views/charts/routes').then((m) => m.routes)
       },
       {
-        path: 'pages',
-        loadChildren: () => import('./views/pages/routes').then((m) => m.routes)
+        path: 'duyurular',
+        loadChildren: () => import('./views/duyurular/routes').then((m) => m.routes)
       }
     ]
   },

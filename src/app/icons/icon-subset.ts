@@ -93,7 +93,17 @@ import {
   cilUser,
   cilUserFemale,
   cilUserFollow,
-  cilUserUnfollow
+  cilUserUnfollow,
+  cilCloud,
+  cilCog,
+  cilEducation,
+  cilFilter,
+  cilFolder,
+  cilLan,
+  cilStorage,
+  cilTag,
+  cil3d,
+  cilAlarm
 } from '@coreui/icons';
 
 import { signet } from './signet';
@@ -195,6 +205,16 @@ export const iconSubset = {
   cilUserFemale,
   cilUserFollow,
   cilUserUnfollow,
+  cilCloud,
+  cilCog,
+  cilEducation,
+  cilFilter,
+  cilFolder,
+  cilLan,
+  cilStorage,
+  cilTag,
+  cil3d,
+  cilAlarm,
   logo,
   signet
 };
