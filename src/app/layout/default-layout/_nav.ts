@@ -1,6 +1,5 @@
+import { input } from '@angular/core';
 import { INavData as CoreUINavData } from '@coreui/angular';
-import { AzureIconComponent } from 'src/app/components/azure-icon/azure-icon.component';
-
 export interface INavData extends CoreUINavData {
   customIcon?: string;
 }
@@ -8,7 +7,7 @@ export interface INavData extends CoreUINavData {
 export const navItems: INavData[] = [
   {
     title: true,
-    name: ' Platform ve Bulut Yönetim Sistemi'
+    name: ' Platform ve Bulut Sistemleri'
   },
   {
     name: 'Alpha Teams',
@@ -117,7 +116,7 @@ export const navItems: INavData[] = [
       {
         name: 'Microsoft Azure',
         url: '/base/bulut-sistemleri/azure',
-        iconComponent: AzureIconComponent,
+        iconComponent: { name: 'azure-icon',input:'Azure Logo' },
         children: [
           {
             name: 'Envanter',
@@ -186,7 +185,7 @@ export const navItems: INavData[] = [
     iconComponent: { name: 'cil-alarm' },
     badge: {
       color: 'info',
-      text: 'NEWS'
+      text: 'NEW'
     }
   },
   {
