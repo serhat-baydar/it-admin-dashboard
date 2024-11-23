@@ -23,7 +23,14 @@
     </c-sidebar-footer>
   }
 </c-sidebar>
-
+<!-- default-layout.component.html -->
+<ng-scrollbar #scrollbar="ngScrollbar" (updated)="onScrollbarUpdate(scrollbar.state)" class="overflow" pointerEventsMethod="scrollbar" visibility="hover">
+  <c-sidebar-nav #overflow [navItems]="navItems" dropdownMode="close" compact>
+    <ng-template #iconTemplate let-item>
+      <img *ngIf="item.icon" [src]="item.icon" alt="{{ item.name }}" class="nav-icon">
+    </ng-template>
+  </c-sidebar-nav>
+</ng-scrollbar>
 <!--main-->
 <div class="wrapper d-flex flex-column min-vh-100">
   <!--app-header-->

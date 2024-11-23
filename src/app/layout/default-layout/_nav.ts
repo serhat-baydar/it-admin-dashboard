@@ -116,7 +116,7 @@ export const navItems: INavData[] = [
       {
         name: 'Microsoft Azure',
         url: '/base/bulut-sistemleri/azure',
-        iconComponent: { name: 'azure-icon',input:'Azure Logo' },
+        icon:'assets/icons/azure.png',
         children: [
           {
             name: 'Envanter',
@@ -148,7 +148,7 @@ export const navItems: INavData[] = [
       {
         name: 'Google Cloud GCP',
         url: '/base/bulut-sistemleri/gcp',
-        iconComponent: { name: 'cil-folder' },
+        icon:'assets/icons/gcp.png',
         children: [
           {
             name: 'Envanter',

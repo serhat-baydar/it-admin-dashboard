@@ -1,17 +1,44 @@
-import { Component } from '@angular/core';
-import { NgStyle } from '@angular/common';
-import { IconDirective } from '@coreui/icons-angular';
-import { ContainerComponent, RowComponent, ColComponent, CardGroupComponent, TextColorDirective, CardComponent, CardBodyComponent, FormDirective, InputGroupComponent, InputGroupTextDirective, FormControlDirective, ButtonDirective } from '@coreui/angular';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-    selector: 'app-login',
-    templateUrl: './login.component.html',
-    styleUrls: ['./login.component.scss'],
-    standalone: true,
-    imports: [ContainerComponent, RowComponent, ColComponent, CardGroupComponent, TextColorDirective, CardComponent, CardBodyComponent, FormDirective, InputGroupComponent, InputGroupTextDirective, IconDirective, FormControlDirective, ButtonDirective, NgStyle]
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
+  loginForm: FormGroup;
+  isFormValid = false;
+  areCredentialsInvalid = false;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) {
+    this.loginForm = this.fb.group({
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      rememberMe: [false]
+    });
+  }
 
+  ngOnInit() {}
+
+  onSubmit() {
+    if (this.loginForm.invalid) {
+      this.isFormValid = true;
+      this.areCredentialsInvalid = false;
+      return;
+    }
+    this.checkCredentials();
+  }
+
+  private checkCredentials() {
+    const { username, password } = this.loginForm.value;
+    // Replace this with your actual authentication logic
+    if (username !== 'admin' || password !== 'admin') {
+      this.isFormValid = false;
+      this.areCredentialsInvalid = true;
+    } else {
+      console.log('Form Submitted!', this.loginForm.value);
+      // Redirect to dashboard or another page
+    }
+  }
 }
