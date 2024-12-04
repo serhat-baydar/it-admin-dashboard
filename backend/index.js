@@ -6,11 +6,11 @@ const app = express();
 app.use(cors());  
 
 const db = mysql.createConnection({  
-  host: 'miazrvul01.mysql.database.azure.com',  
-  user: 'migvulsqladmin',  
-  password: 'Has9988!!',  
-  database: 'assesment',
-    port: 3306,
+  host: 'mxxxxxxm',  
+  user: 'xxxxx',  
+  password: 'xxx',  
+  database: 'xxxx',
+    port: xxx,
 });  
 
 db.connect(err => {  
