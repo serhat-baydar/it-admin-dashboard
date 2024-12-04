@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
-import { DefaultLayoutComponent } from './layout/default-layout';
+import { DefaultLayoutComponent } from './layout/default-layout/default-layout.component';
+import { DataDisplayComponent } from './data-display/data-display.component';
+import { ApiComponent } from './views/api/api.component';
 
 export const routes: Routes = [
   {
@@ -10,41 +12,39 @@ export const routes: Routes = [
     },
     children: [
       {
-        path: 'dashboard',
-        loadChildren: () => import('./views/dashboard/routes').then((m) => m.routes)
-      },
-      {
         path: 'alpha',
         loadChildren: () => import('./views/alpha/routes').then((m) => m.routes)
       },
+
       {
-        path: 'base',
-        loadChildren: () => import('./views/base/routes').then((m) => m.routes)
+        path: 'duyurular',
+        loadChildren: () => import('./views/duyurular/routes').then((m) => m.routes)
       },
       {
-        path: 'buttons',
-        loadChildren: () => import('./views/buttons/routes').then((m) => m.routes)
+        path: 'platform/tanzu',
+        loadChildren: () => import('./views/platform/tanzu/routes').then((m) => m.routes)
       },
       {
-        path: 'forms',
-        loadChildren: () => import('./views/forms/routes').then((m) => m.routes)
+        path: 'platform/openshift',
+        loadChildren: () => import('./views/platform/openshift/routes').then((m) => m.routes)
       },
       {
-        path: 'icons',
-        loadChildren: () => import('./views/icons/routes').then((m) => m.routes)
+        path: 'bulut/azure',
+        loadChildren: () => import('./views/bulut/azure/routes').then((m) => m.routes)
       },
       {
-        path: 'notifications',
-        loadChildren: () => import('./views/notifications/routes').then((m) => m.routes)
+        path: 'bulut/gcp',
+        loadChildren: () => import('./views/bulut/gcp/routes').then((m) => m.routes)
       },
       {
-        path: 'widgets',
-        loadChildren: () => import('./views/widgets/routes').then((m) => m.routes)
+        path: 'pages',
+        loadChildren: () => import('./views/pages/routes').then((m) => m.routes)
       },
       {
-        path: 'login',
-        loadChildren: () => import('./views/pages/login/login.module').then((m) => m.LoginModule)
-      }
+        path: 'api',
+        component: ApiComponent
+      },
+    
     ]
   }
 ];

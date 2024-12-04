@@ -24,3 +24,23 @@
     color: #1976d2;
   }
 }
+
+.misyon-container {
+  .italic-text {
+    font-style: italic;
+  }
+
+  .spaced-text {
+    margin-top: 3em; /* 3 lines of space */
+    white-space: pre-wrap; /* Ensure word wrapping */
+  }
+
+  .vision-statement {
+    background-color: #fff;
+    border: 1px solid #bbdefb;
+    border-radius: 6px;
+    padding: 15px;
+    font-size: 1em;
+    color: #1976d2;
+  }
+}

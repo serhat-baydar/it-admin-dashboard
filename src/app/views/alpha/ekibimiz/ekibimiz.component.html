@@ -1,56 +1,131 @@
 <div class="ekibimiz-container">
-  <h1>Ekibimiz</h1>
-  
-  <ul>
-    <li *ngFor="let member of teamMembers">
-      <img [src]="member.avatar" alt="{{ member.name }}" class="avatar">
-      <div class="member-info">
-        <h2>{{ member.name }}</h2>
-        <p>{{ member.role }}</p>
-      </div>
-    </li>
-  </ul>
+  <div class="header-card">
+    <h1>Platform ve Bulut Sistemleri Ekibi</h1>
+  </div>
+  <div class="tree">
+    <ul>
+      <li>
+        <ul>
+          <li *ngFor="let member of teamMembers">
+            <div class="member-info">
+              <img [src]="member.avatar" alt="{{ member.name }}" class="avatar">
+              <h2>{{ member.name }}</h2>
+              <p>{{ member.role }}</p>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </div>
 
 <style>
-.ekibimiz-container {
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-    color: #666;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-    li {
-      font-size: 1.1em;
-      margin-bottom: 20px;
-      color: #555;
-      display: flex;
-      align-items: center;
-      &:before {
-        content: '•';
-        color: #007bff;
-        display: inline-block;
-        width: 1em;
-        margin-left: -1em;
-      }
-    }
-  }
+.header-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%; /* Ensure the header-card takes the full height of its container */
+}
+.header-card h1 {
+  font-size: 2em; /* Başlık font boyutunu küçülttük */
+  text-align: center;
+  margin: 0;
+  color: #333;
+  font-style: italic;
+}
+.tree ul {
+  padding-top: 50px; /* Üye kartlarının biraz daha aşağıda görüntülenmesi için padding-top değerini artırdık */
+  position: relative;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  list-style-type: none; /* Mavi noktaları kaldırmak için */
+}
+.tree li {
+  float: left; 
+  text-align: center;
+  list-style-type: none; /* Mavi noktaları kaldırmak için */
+  position: relative;
+  padding: 10px 5px 0 5px; /* Kartların padding değerini küçülttük */
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+.tree li::before, .tree li::after {
+  content: '';
+  position: absolute; 
+  top: 0; 
+  right: 50%;
+  border-top: 1px solid #ccc;
+  width: 50%; 
+  height: 20px;
+}
+.tree li::after {
+  right: auto; 
+  left: 50%;
+  border-left: 1px solid #ccc;
+}
+.tree li:only-child::after, .tree li:only-child::before {
+  display: none;
+}
+.tree li:only-child { 
+  padding-top: 0; 
+}
+.tree li:first-child::before, .tree li:last-child::after {
+  border: 0 none;
+}
+.tree li:last-child::before {
+  border-right: 1px solid #ccc;
+  border-radius: 0 5px 0 0;
+  -webkit-border-radius: 0 5px 0 0;
+  -moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after {
+  border-radius: 5px 0 0 0;
+  -webkit-border-radius: 5px 0 0 0;
+  -moz-border-radius: 5px 0 0 0;
+}
+.tree ul ul::before {
+  content: '';
+  position: absolute; 
+  top: 0; 
+  left: 50%;
+  border-left: 2px solid #ccc; /* Çizgilerin kalınlığını artırdık */
+  width: 0; 
+  height: 20px;
+}
+.member-info {
+  border: 1cap solid #ccc;
+  padding: 10px; /* Kartların padding değerini artırdık */
+  text-align: center;
+  border-radius: 10px;
+  display: inline-block;
+  background: #fff;
+  position: relative;
+  top: 1px;
+  font-size: 0.7em; /* Yazı font boyutunu artırdık */
+  width: 150px; /* Kartların genişliğini belirledik */
+  height: 200px; /* Kartların yüksekliğini belirledik */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.member-info:hover, .member-info:hover+ul li .member-info {
+  background: #ff7b00; 
+  color: #fff; 
+  border: 1px solid #ff7b00;
+}
+.member-info:hover+ul li::after, 
+.member-info:hover+ul li::before, 
+.member-info:hover+ul::before, 
+.member-info:hover+ul ul::before {
+  border-color: #ff7b00;
 }
 .avatar {
-  width: 50px;
-  height: 50px;
+  width: 100px; /* Avatar boyutunu belirledik */
+  height: 100px; /* Avatar boyutunu belirledik */
   border-radius: 50%;
-  margin-right: 20px;
+  margin-bottom: 10px;
 }
 </style>

@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-  <section class="h-100 gradient-form" style="background-color: #eee;">
+  <section class="h-100 gradient-form" style="background-color: #eeeeee;">
     <div class="container py-5 h-100 d-flex flex-column justify-content-center">
       <div class="row d-flex justify-content-center align-items-center flex-grow-1">
         <div class="col-xl-10">
@@ -19,8 +19,7 @@
 
                   <div class="text-center">
                     <img src="./assets/images/Alpha_teams_logov2.png" style="width: 160px; border-radius: 50%;" alt="logo">
-                    <h2 class="mt-1 mb-4 pb-1">Alpha Teams</h2>
-                    <p class="welcome-text">Hoşgeldiniz 👋🏻</p>
+                    <h3 class="mt-1 mb-5 pb-1">Alpha Teams 👋🏻</h3>
                   </div>
 
                   <form>
@@ -29,12 +28,11 @@
                       <input type="email" id="form2Example11" class="form-control" placeholder="Kullanıcı adını giriniz." />
                     </div>
 
-                    <div data-mdb-input-init class="form-outline mb-4 position-relative">
+                    <div data-mdb-input-init class="form-outline mb-4">
                       <label class="form-label" for="form2Example22">Şifre</label>
-                      <input type="password" id="form2Example22" class="form-control" />
-                      <span class="position-absolute" id="togglePassword" style="top: 50%; right: 10px; cursor: pointer;">
-                        <i class="fa fa-eye" id="toggleIcon"></i>
-                      </span>
+                      <div class="input-group">
+                        <input type="password" id="form2Example22" class="form-control" />
+                      </div>
                     </div>
 
                     <div class="form-check form-switch d-flex align-items-center mb-4">
@@ -62,22 +60,5 @@
       </div>
     </div>
   </section>
-
-  <!-- JavaScript kodunu buraya ekleyin -->
-  <script>
-    document.getElementById('togglePassword').addEventListener('click', function (e) {
-      const passwordInput = document.getElementById('form2Example22');
-      const icon = document.getElementById('toggleIcon');
-      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-      passwordInput.setAttribute('type', type);
-      if (type === 'password') {
-        icon.classList.remove('fa-eye-slash');
-        icon.classList.add('fa-eye');
-      } else {
-        icon.classList.remove('fa-eye');
-        icon.classList.add('fa-eye-slash');
-      }
-    });
-  </script>
 </body>
 </html>

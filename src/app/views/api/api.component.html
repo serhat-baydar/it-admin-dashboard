@@ -1,0 +1,10 @@
+<div *ngIf="data; else loading">
+  <h2>API Response:</h2>
+  <pre>{{ data | json }}</pre>
+</div>
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>
+<div *ngIf="error">
+  <p>Error: {{ error.message }}</p>
+</div>

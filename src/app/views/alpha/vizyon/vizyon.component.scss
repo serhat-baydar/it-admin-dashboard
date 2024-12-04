@@ -24,3 +24,12 @@
     color: #1976d2;
   }
 }
+
+.italic-text {
+  font-style: italic;
+}
+
+.spaced-text {
+  margin-top: 3em; /* 3 lines of space */
+  white-space: pre-wrap; /* Ensure word wrapping */
+}
